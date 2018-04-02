@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Test.Objects.Builders;
 
 namespace Test.Objects.ObjectMothers
 {
-    class SupplierObjectMother
+    public static class SupplierObjectMother
     {
+        public static SupplierBuilder aDefaultSupplier()
+            => SupplierBuilder.aSupplierBuilder();
     }
 }

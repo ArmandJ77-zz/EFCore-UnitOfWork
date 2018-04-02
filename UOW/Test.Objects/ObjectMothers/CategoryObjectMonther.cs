@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using Test.Objects.Builders;
 
 namespace Test.Objects.ObjectMothers
 {
-    class CategoryObjectMonther
+    public sealed class CategoryObjectMonther
     {
+        public static CategoryBuilder aDefaultCategory()
+            => CategoryBuilder.aCategoryBuilder();
+
+        
     }
 }

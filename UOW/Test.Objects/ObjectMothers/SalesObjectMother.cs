@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Test.Objects.Builders;
 
 namespace Test.Objects.ObjectMothers
 {
-    class SalesObjectMother
+    public sealed class SalesObjectMother
     {
+        public static SalesBuilder aDefaultSale() 
+            => SalesBuilder.aSalesBuilder();
     }
 }

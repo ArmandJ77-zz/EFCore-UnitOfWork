@@ -1,4 +1,7 @@
-﻿namespace Test.Objects.Builders
+﻿using Test.Objects.Infrastructure.TestObjects.Infrastructure;
+using UOW.Consumer.Repository;
+
+namespace Test.Objects.Builders
 {
     public class SalesBuilder
     {
@@ -36,5 +39,8 @@
             this.Qty = qty;
             return this;
         }
+
+        public Sales ToRepository()
+            => Converter.Convert<SalesBuilder, Sales>(this, new Sales());
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace Test.Objects.Builders
+﻿using Test.Objects.Infrastructure.TestObjects.Infrastructure;
+using UOW.Consumer.Repository;
+
+namespace Test.Objects.Builders
 {
     public class SupplierBuilder
     {
@@ -21,5 +24,8 @@
             this.Name = name;
             return this;
         }
+
+        public Supplier ToRepository()
+            => Converter.Convert<SupplierBuilder, Supplier>(this, new Supplier());
     }
 }
