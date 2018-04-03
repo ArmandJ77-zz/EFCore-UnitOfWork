@@ -19,7 +19,7 @@ namespace UOW.Consumer
 
             using (var context = new DatabaseContext(options))
             {
-                DatabaseSeed.Seed(context);
+                DatabaseSeed.SeedSql(context);
 
                 Console.WriteLine($"Seed added {context.Categories.ToList().Count} categories");
                 Console.WriteLine($"Seed added {context.Suppliers.ToList().Count} suppliers");
