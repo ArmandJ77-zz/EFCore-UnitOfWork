@@ -11,7 +11,7 @@ using UOW.Consumer.Repository;
 namespace UOW.Consumer.Repository.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20180402104802_InitalCreate")]
+    [Migration("20180402202101_InitalCreate")]
     partial class InitalCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,6 +26,8 @@ namespace UOW.Consumer.Repository.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("IsDeleted");
+
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
@@ -39,6 +41,8 @@ namespace UOW.Consumer.Repository.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email");
+
+                    b.Property<bool>("IsDeleted");
 
                     b.Property<string>("Name");
 
@@ -56,9 +60,11 @@ namespace UOW.Consumer.Repository.Migrations
 
                     b.Property<int>("CategoryId");
 
+                    b.Property<bool>("IsDeleted");
+
                     b.Property<string>("Name");
 
-                    b.Property<decimal>("Price");
+                    b.Property<double>("Price");
 
                     b.Property<int>("SupplierId");
 
@@ -78,6 +84,8 @@ namespace UOW.Consumer.Repository.Migrations
 
                     b.Property<int>("CustomerId");
 
+                    b.Property<bool>("IsDeleted");
+
                     b.Property<int>("ProductId");
 
                     b.Property<int>("Qty");
@@ -95,6 +103,8 @@ namespace UOW.Consumer.Repository.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("IsDeleted");
 
                     b.Property<string>("Name");
 

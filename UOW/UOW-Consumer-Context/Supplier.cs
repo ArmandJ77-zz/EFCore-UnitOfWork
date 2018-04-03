@@ -6,5 +6,6 @@ namespace UOW.Consumer.Repository
     public class Supplier : BaseRepository, IDeletable
     {
         public string Name { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

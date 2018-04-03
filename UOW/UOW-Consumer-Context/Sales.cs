@@ -9,6 +9,7 @@ namespace UOW.Consumer.Repository
 
         public int CustomerId { get; set; }
         public int ProductId { get; set; }
+        public bool IsDeleted { get; set; }
 
         public Customer Customer { get; set; }
         public Product Product { get; set; }

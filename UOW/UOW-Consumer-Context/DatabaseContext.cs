@@ -11,10 +11,19 @@ namespace UOW.Consumer.Repository
         public DbSet<Sales> Sales { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=SalesDb;Integrated Security=True");
-        }
+        public DatabaseContext()
+        { }
+
+        public DatabaseContext(DbContextOptions<DatabaseContext> options)
+            : base(options)
+        { }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    //Create a sql user with enough premission to execute the set identity on used by the 
+        //    //data seed user can be anything just rememebr to change here
+        //    optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=UOWConsumerDb;User ID=UOWConsumerDbUser;Password=UOWConsumerDbUser");
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
